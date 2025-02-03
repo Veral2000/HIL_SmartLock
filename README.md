@@ -2,4 +2,4 @@ This repo is for the Hardware in Loop framework implementation for the Smart Loc
 
 This Repo consits of below files:
   1. SmartLock_fw_1.2.py - Python Script - this will run as a service in the smart lock, where it supports the interfaces like RFID, Keypad and MSR.
-  2. service file - Service file makes the python file to run as a service, where we have to keep this file under systemd folder and enable and start this service.  
+  2. Smartlock.service - service file - Service file makes the python file to run as a service, where we have to keep this file under systemd folder and enable and start this service.  
