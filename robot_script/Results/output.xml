@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-06-26T18:10:44.545216" rpa="false" schemaversion="5">
+<suite id="s1" name="Serial" source="D:\Download_recovery\robot_script\robot_script\serial.robot">
+<test id="s1-t1" name="CORRECT KEYPAD TEST" line="45">
+<kw name="Send To Mcu" owner="CustomKeywords">
+<msg time="2025-06-26T18:10:45.215574" level="INFO">Data sent to send_data_to_mcu: {"mode": "keypad", "data": [5,7,5,7]}</msg>
+<arg>{"mode": "keypad", "data": [5,7,5,7]}</arg>
+<status status="PASS" start="2025-06-26T18:10:45.077552" elapsed="0.138022"/>
+</kw>
+<kw name="Wait For Data" owner="CustomKeywords">
+<msg time="2025-06-26T18:10:45.244011" level="INFO">Updated partition assignment: [TopicPartition(topic='get_deta_from_mcu', partition=0)]</msg>
+<msg time="2025-06-26T18:10:45.246026" level="INFO">&lt;BrokerConnection node_id=0 host=192.168.210.186:9092 &lt;connecting&gt; [IPv4 ('192.168.210.186', 9092)]&gt;: connecting to 192.168.210.186:9092 [('192.168.210.186', 9092) IPv4]</msg>
+<msg time="2025-06-26T18:10:45.349515" level="INFO">&lt;BrokerConnection node_id=0 host=192.168.210.186:9092 &lt;connecting&gt; [IPv4 ('192.168.210.186', 9092)]&gt;: Connection complete.</msg>
+<msg time="2025-06-26T18:10:45.349515" level="INFO">&lt;BrokerConnection node_id=bootstrap-0 host=192.168.210.186:9092 &lt;connected&gt; [IPv4 ('192.168.210.186', 9092)]&gt;: Closing connection. </msg>
+<msg time="2025-06-26T18:10:54.709054" level="INFO">Received data: {'led': 'green', 'lock': 'Unlocked'}</msg>
+<msg time="2025-06-26T18:10:54.709054" level="INFO">${response} = {'led': 'green', 'lock': 'Unlocked'}</msg>
+<var>${response}</var>
+<arg>timeout=15</arg>
+<status status="PASS" start="2025-06-26T18:10:45.217088" elapsed="9.491966"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-26T18:10:54.712663" level="INFO">The input matches {'led': 'green', 'lock': 'Unlocked'}. Test passed!</msg>
+<arg>The input matches ${response}. Test passed!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-26T18:10:54.712663" elapsed="0.000000"/>
+</kw>
+<arg>${response} == {"led": "green","lock":"Unlocked"}</arg>
+<arg>Log</arg>
+<arg>The input matches ${response}. Test passed!</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>The input does not match ${response}. Test failed!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-26T18:10:54.712663" elapsed="0.002047"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-26T18:11:04.721170" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-26T18:10:54.714710" elapsed="10.006460"/>
+</kw>
+<status status="PASS" start="2025-06-26T18:10:45.071831" elapsed="19.650675"/>
+</test>
+<status status="PASS" start="2025-06-26T18:10:44.551236" elapsed="20.172877"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Serial" id="s1" pass="1" fail="0" skip="0">Serial</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-06-26T18:10:45.069519" level="WARN">group_id is None: disabling auto-commit.</msg>
+</errors>
+</robot>
