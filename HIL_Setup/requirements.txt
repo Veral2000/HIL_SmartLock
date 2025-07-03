@@ -1,0 +1,4 @@
+kafka-python
+adafruit-circuitpython-tcs34725
+RPi.GPIO
+pyserial
