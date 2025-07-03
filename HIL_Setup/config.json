@@ -1,0 +1,42 @@
+{
+  "serial": {
+    "port": "/dev/ttyUSB0",
+    "baudrate": 9600
+  },
+  "kafka": {
+    "broker": "192.168.137.89:9092",
+    "send_topic": "send_data_to_mcu",
+    "receive_topic": "get_deta_from_mcu"
+  },
+  "gpio": {
+    "relays": [17, 18, 27, 22],
+    "rfid_pins": [23, 24, 25],
+    "motor_pwm": {
+      "RPWM": 13,
+      "LPWM": 19,
+      "R_EN": 26,
+      "L_EN": 21
+    },
+    "limit_switch": {
+      "pin": 12,
+      "high_pin": 16
+    }
+  },
+  "sensor": {
+    "integration_time": 50,
+    "gain": 16,
+    "led": true
+  },
+  "color_thresholds": {
+    "red": {
+      "r_min": 1500,
+      "g_max": 400,
+      "b_max": 500
+    },
+    "green": {
+      "r_max": 428,
+      "g_min": 1400,
+      "b_min": 250
+    }
+  }
+}
